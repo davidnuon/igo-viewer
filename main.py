@@ -5,7 +5,18 @@ with open('board.txt') as f:
 
 board = []
 
+BLACK = '⚫ '
+WHITE = '⚪ '
+BLANK = '☩ '
+
 rows = file_content.strip().split('\n')
 for row in rows:
+    printed_row = ''
     for col in row:
-        print(col)
+        if col == '.':
+            printed_row += BLANK
+        elif col == 'X':
+            printed_row += BLACK
+        elif col == '0':
+            printed_row += WHITE
+    print(printed_row)
